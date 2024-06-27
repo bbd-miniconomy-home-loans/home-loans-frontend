@@ -13,11 +13,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+        
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          
       - name: Install App dependencies
         run: |
-          npm install --legacy-peer-deps
-
+          # npm install --legacy-peer-deps
+          npm i
+          ls -la node_modules/
+          
       - name: Build App
         run: |
           npm run build
