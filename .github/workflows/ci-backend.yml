@@ -21,8 +21,10 @@ jobs:
           
       - name: Install App dependencies
         run: |
-          npm install --legacy-peer-deps
-
+          # npm install --legacy-peer-deps
+          npm ci
+          ls -la node_modules/
+          
       - name: Build App
         run: |
           npm run build
