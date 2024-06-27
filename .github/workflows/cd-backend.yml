@@ -6,6 +6,12 @@ on:
   # pull_request:
   #   branches: [ "master" ]
 
+permissions:
+  checks: write
+  contents: read
+  id-token: write
+  security-events: write
+
 jobs:
   app-cd:
     runs-on: ubuntu-latest
