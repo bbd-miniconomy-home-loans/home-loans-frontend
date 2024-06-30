@@ -1,0 +1,41 @@
+name: Docker Image CD
+
+on:
+  push:
+  #   branches: [ "master" ]
+  # pull_request:
+  #   branches: [ "master" ]
+
+permissions:
+  checks: write
+  contents: read
+  id-token: write
+  security-events: write
+
+jobs:
+  app-cd:
+    runs-on: ubuntu-latest
+    environment: Testing
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4.0.2
+        with:
+          role-to-assume: ${{ secrets.AWS_ASSUME_ROLE }}
+          aws-region: eu-west-1
+          role-session-name: Service_CD_GitHub_to_AWS_via_FederatedOIDC
+
+      - name: Install App dependencies
+        run: |
+          npm install --legacy-peer-deps
+
+      - name: Build App
+        run: |
+          npm run build
+
+      - name: Deploy Website Files
+        working-directory: ./build
+        run: aws s3 cp . s3://home-loans-service-fe-admin-portal/ --recursive
