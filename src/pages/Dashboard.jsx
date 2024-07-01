@@ -1,5 +1,6 @@
 import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
+import {FinancialServices} from '../components';
 import { Variables } from './variables';
 
 const Dashboard = () => {
@@ -19,11 +20,7 @@ const Dashboard = () => {
       </Container>
 
       {/* TODO: set proper height for containers */}
-      <Container maxWidth="md" sx={{ width: '90%', marginBottom: 2 }}>
-        <Box sx={{ bgcolor: Variables.primaryColor, height: '30vh' }}>
-          Financial Services
-        </Box>
-      </Container>
+      <FinancialServices />
 
       <Container maxWidth="md" sx={{ width: '90%' }}>
         <Box sx={{ bgcolor: Variables.secondaryColor, height: '30vh' }}>
