@@ -24,6 +24,11 @@ export const Pages = [
     name: 'Stock Exchange',
     link: '/stock-exchange',
   },
+  {
+    id: 5,
+    name: 'Login',
+    link: '/login',
+  },
 ];
 
 
