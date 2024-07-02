@@ -1,4 +1,4 @@
-export { default as SignIn } from './SignIn';
+export { default as Unauthenticated } from './Unauthenticated';
 export { default as NavigationBar } from './NavigationBar';
 export { default as Dashboard } from './Dashboard';
 export { default as Bank } from './Bank';
