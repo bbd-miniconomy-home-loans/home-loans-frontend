@@ -1,35 +1,41 @@
 import React from 'react';
+
 import { Box, Container, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 import { displayDough } from '../common';
+import { Variables } from '../pages/variables';
 
-export const FinancialServicesBlock = ({ text, value }) => {
+export const FinancialServicesBlock = ({ text, value, Icon }) => {
   return (
-    <Box
+    <Container
       sx={{
-        borderRadius: 4,
-        backgroundColor: '#00BDD66B',
+        borderRadius: 2.5,
+        backgroundColor: Variables.secondaryColor,
         p: 2,
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'column', // Stack items vertically
         alignItems: 'center',
         justifyContent: 'center',
+        height: '100%',
       }}
     >
-      <Container>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Icon />
         <Typography sx={{ p: 0.5 }}>{text}</Typography>
-      </Container>
-      <Container>
-        <Typography variant="h6" sx={{ p: 0.5 }}>
+      </Box>
+
+      <Box>
+        <Typography sx={{ p: 0.5 }}>
           {displayDough(value)}
         </Typography>
-      </Container>
-    </Box>
+      </Box>
+    </Container>
   );
 };
 
 FinancialServicesBlock.propTypes = {
   text: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
+  Icon: PropTypes.elementType.isRequired,
 };

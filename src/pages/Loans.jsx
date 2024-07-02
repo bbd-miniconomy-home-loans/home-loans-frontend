@@ -1,9 +1,8 @@
 import React from 'react';
 
-const Loans = () => {
+export const Loans = () => {
   return (
     <div>Loans</div>
   );
 };
 
-export default Loans;

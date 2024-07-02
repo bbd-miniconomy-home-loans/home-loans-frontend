@@ -1,9 +1,12 @@
 import React from 'react';
+import { FinancialServices } from '../components';
+import { Container } from '@mui/material';
 
-const Bank = () => {
+export const Bank = () => {
   return (
-    <div>Bank</div>
+    <Container sx={{}}>
+      <FinancialServices />
+    </Container>
   );
 };
 
-export default Bank;

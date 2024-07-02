@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -22,7 +22,7 @@ import { Pages } from '../common/constants';
 
 const settings = ['Logout'];
 
-function NavigationBar() {
+export const NavigationBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -38,6 +38,8 @@ function NavigationBar() {
 
   const RenderPageLinks = () => {
 
+    const location = useLocation();
+
     return (
       Pages.map((page) => (
         <Button
@@ -45,7 +47,13 @@ function NavigationBar() {
           to={page.link}
           component={Link}
           onClick={handleCloseMenu(setAnchorElNav)}
-          sx={{ my: 2, color: Variables.darkColor, display: 'block' }}
+          sx={{ 
+            my: 2,
+            color: location.pathname === page.link 
+              ? Variables.primaryColor 
+              : Variables.darkColor, 
+            display: 'block', 
+            '&.active': { color: Variables.secondaryColor } }}
         >
           {page.name}
         </Button>
@@ -55,8 +63,8 @@ function NavigationBar() {
 
   return (
     <>
-      <AppBar position="static">
-        <Container maxWidth="xl" sx={{ bgcolor: Variables.lightColor, width: '100vw', color: Variables.darkColor }}>
+      <AppBar position="static" sx={{ bgcolor: Variables.lightColor, width: '100vw', color: Variables.darkColor }}>
+        <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
 
             {/* Mobile Menu */}
@@ -138,5 +146,4 @@ function NavigationBar() {
       <Outlet />
     </>
   );
-}
-export default NavigationBar;
+};
