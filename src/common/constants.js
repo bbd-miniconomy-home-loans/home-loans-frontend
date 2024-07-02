@@ -19,16 +19,6 @@ export const Pages = [
     name: 'Loan Applications',
     link: '/loans',
   },
-  {
-    id: 4,
-    name: 'Stock Exchange',
-    link: '/stock-exchange',
-  },
-  {
-    id: 5,
-    name: 'Login',
-    link: '/login',
-  },
 ];
 
 

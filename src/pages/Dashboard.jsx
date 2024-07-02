@@ -1,12 +1,12 @@
 import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
-import {FinancialServices} from '../components';
+import { FinancialServices } from '../components';
 import { Variables } from './variables';
 
-const Dashboard = () => {
+export const Dashboard = () => {
 
   return (
-    <Box
+    <Container
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -16,10 +16,9 @@ const Dashboard = () => {
       }}>
 
       <Container>
-        <Typography variant='h3' sx={{ p: 5, ml: 5 }}>Dashboard</Typography>
+        <Typography variant='h3' sx={{ p: 5 }}>Dashboard</Typography>
       </Container>
 
-      {/* TODO: set proper height for containers */}
       <FinancialServices />
 
       <Container maxWidth="md" sx={{ width: '90%' }}>
@@ -27,8 +26,6 @@ const Dashboard = () => {
           Loan Applications
         </Box>
       </Container>
-    </Box>
+    </Container>
   );
 };
-
-export default Dashboard;

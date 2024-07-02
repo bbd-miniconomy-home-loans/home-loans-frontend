@@ -1,66 +1,86 @@
 import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import { FinancialServicesBlock } from './FinancialServicesBlock';
 
+import BalanceIcon from '@mui/icons-material/Balance';
+import ReceiptIcon from '@mui/icons-material/Receipt';
+import StoreIcon from '@mui/icons-material/Store';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
+
+import { BoxStyle, ContainerStyle } from './styles';
+import { Variables } from '../pages/variables';
 
 export const FinancialServices = () => {
   return (
-  <Container maxWidth="md" sx={{ width: '90%',
-     marginBottom: 2,
-      border: '1px solid lightgrey',
-      borderRadius: 4,
-      gap: 4,
+    <Container sx={{
+      margin: 2,
+      borderRadius: 2,
       padding: 2,
+      border: `0.1rem solid ${Variables.lightGrey}`,
     }}>
-      <Container>
-        <Typography variant='h4' sx={{ p: 1 }}>Commercial Bank</Typography>
-      </Container>
-    <Box
-      sx={{
-        bgcolor: '#F8F9FAFF;',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: 16,
-        borderRadius: 4,
-        height: '30vh',
-        px: 8,
-        py: 4,
-      }}
-    >
-      <FinancialServicesBlock
-        text='Balances'
-        value={12341}
-      />
-      <FinancialServicesBlock
-        text='Transactions'
-        value={12341}
-      />
-    </Box>
+      <Typography variant='h4' sx={{ px: 1, py: 2, pb: 5 }}>Financial Services</Typography>
 
-    <Container>
-      <Typography variant='h4' sx={{ p: 1 }}>Stock Exchange</Typography>
+      <Container sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: { xs: 'wrap', md: 'nowrap' },
+        flexGrow: 1,
+        gap: 5,
+      }}>
+        <Container sx={{ ContainerStyle }}>
+          <Box sx={BoxStyle}>
+            <Typography variant='h6'>Commercial Bank</Typography>
+            <Box>
+              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 4 }}>
+                <Grid item xs={6}>
+                  <FinancialServicesBlock
+                    Icon={BalanceIcon}
+                    text='Balances'
+                    value={12341}
+                  />
+                </Grid>
+
+                <Grid item xs={6}>
+                  <FinancialServicesBlock
+                    Icon={ReceiptIcon}
+                    text='Transactions'
+                    value={12341}
+                  />
+                </Grid>
+
+              </Grid>
+            </Box>
+          </Box>
+        </Container>
+
+        <Container sx={{ ContainerStyle }}>
+          <Box
+            sx={BoxStyle}>
+
+            <Typography variant='h6'>Stock Exchange</Typography>
+            <Box>
+              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 4 }}>
+                <Grid item xs={6}>
+                  <FinancialServicesBlock
+                    Icon={StoreIcon}
+                    text='Buy/Sell Stocks'
+                    value={12341.12312}
+                  />
+                </Grid>
+
+                <Grid item xs={6}>
+
+                  <FinancialServicesBlock
+                    Icon={AnalyticsIcon}
+                    text='Market Overview'
+                    value={12341.12321}
+                  />
+                </Grid>
+              </Grid>
+            </Box>
+          </Box>
+        </Container>
+      </Container>
     </Container>
-    <Box
-      sx={{
-        bgcolor: '#F8F9FAFF;',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: 16,
-        px: 8,
-        py: 4,
-        height: '30vh',
-        borderRadius: 4,
-      }}
-    >
-      <FinancialServicesBlock
-        text='Buy/Sell Stocks'
-        value={12341.12312}
-      />
-      <FinancialServicesBlock
-        text='Market Overview'
-        value={12341.12321}
-      />
-    </Box>
-  </Container>
   );
 };

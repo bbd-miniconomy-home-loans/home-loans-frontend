@@ -3,4 +3,5 @@ export const Variables = {
   secondaryColor: '#00BDD66B',
   lightColor: '#f0f0f0',
   darkColor: '#333',
+  lightGrey: '	#DCDCDC',
 };

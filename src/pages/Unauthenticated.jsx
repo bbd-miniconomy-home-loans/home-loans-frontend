@@ -1,6 +1,6 @@
 import React from 'react';
 import { LoginLink } from '../components/authentication';
-const Unauthenticated = () => {
+export const Unauthenticated = () => {
 
   return (
     <div>
@@ -8,5 +8,3 @@ const Unauthenticated = () => {
     </div>
   );
 };
-
-export default Unauthenticated;
