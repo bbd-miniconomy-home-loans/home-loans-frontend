@@ -5,6 +5,7 @@ import {
   Chart,
   PieSeries,
 } from '@devexpress/dx-react-chart-material-ui';
+import { BorderedBox } from './BorderedBox';
 
 const data = [
   { argument: 'Monday', value: 10 },
@@ -17,14 +18,7 @@ const data = [
 export const LoanApplications = () => {
 
   return (
-    <Container sx={{
-      margin: 2,
-      borderRadius: 2,
-      padding: 2,
-      border: `0.1rem solid ${Variables.lightGrey}`,
-      minWidth: "250%",
-      display: "flex"
-    }}>
+    <BorderedBox>
       <Chart
         data={data}
       >
@@ -35,6 +29,6 @@ export const LoanApplications = () => {
           outerRadius={1.0}
         />
       </Chart>
-    </Container>
+    </BorderedBox>
   );
 };
