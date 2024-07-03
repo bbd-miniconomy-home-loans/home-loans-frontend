@@ -4,6 +4,7 @@ import TableCell from '@mui/material/TableCell';
 import Avatar from '@mui/material/Avatar';
 import { displayDough } from '../common';
 import { Chip } from '@mui/material';
+import { LoanDataContext } from './LoanDataProvider';
 
 export const LoanTableRow = ({ avatarUrl, name, status, primeInterestRate, installmentAmountCents, interestRate, asHeader = false }) => {
 

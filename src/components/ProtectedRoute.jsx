@@ -3,7 +3,7 @@ import React from 'react';
 import { Unauthenticated } from '../pages';
 
 const useAuth = () => {
-  return false
+  return true
 };
 
 export const ProtectedRoute = ({children}) => {
