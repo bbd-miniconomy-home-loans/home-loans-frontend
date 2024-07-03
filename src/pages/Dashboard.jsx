@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
-import { FinancialServices } from '../components';
-import { Variables } from './variables';
+import { FinancialServices, LoanApplications } from '../components';
+import { Variables } from '../common/variables';
 
 export const Dashboard = () => {
 
@@ -20,12 +20,9 @@ export const Dashboard = () => {
       </Container>
 
       <FinancialServices />
-
-      <Container maxWidth="md" sx={{ width: '90%' }}>
-        <Box sx={{ bgcolor: Variables.secondaryColor, height: '30vh' }}>
-          Loan Applications
-        </Box>
-      </Container>
+      <Box>
+        <LoanApplications />
+      </Box>
     </Container>
   );
 };

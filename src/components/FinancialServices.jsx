@@ -8,7 +8,7 @@ import StoreIcon from '@mui/icons-material/Store';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 
 import { BoxStyle, ContainerStyle } from './styles';
-import { Variables } from '../pages/variables';
+import { Variables } from '../common/variables';
 
 export const FinancialServices = () => {
   return (
