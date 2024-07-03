@@ -9,15 +9,11 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 
 import { BoxStyle, ContainerStyle } from './styles';
 import { Variables } from '../common/variables';
+import { BorderedBox } from './BorderedBox';
 
 export const FinancialServices = () => {
   return (
-    <Container sx={{
-      margin: 2,
-      borderRadius: 2,
-      padding: 2,
-      border: `0.1rem solid ${Variables.lightGrey}`,
-    }}>
+    <BorderedBox>
       <Typography variant='h4' sx={{ px: 1, py: 2, pb: 5 }}>Financial Services</Typography>
 
       <Container sx={{
@@ -81,6 +77,6 @@ export const FinancialServices = () => {
           </Box>
         </Container>
       </Container>
-    </Container>
+    </BorderedBox>
   );
 };
