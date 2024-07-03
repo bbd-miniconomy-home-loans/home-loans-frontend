@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 import { displayDough } from '../common';
-import { Variables } from '../pages/variables';
+import { Variables } from '../common/variables';
 
 export const FinancialServicesBlock = ({ text, value, Icon }) => {
   return (

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import AdbIcon from '@mui/icons-material/Adb';
 import Button from '@mui/material/Button';
-import { Variables } from '../pages/variables';
+import { Variables } from '../common/variables';
 
 export const Logo = () => {
   return (

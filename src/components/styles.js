@@ -1,4 +1,4 @@
-import { Variables } from '../pages/variables';
+import { Variables } from '../common/variables';
 
 export const BoxStyle = {
   bgcolor: Variables.lightColor,
