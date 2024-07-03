@@ -28,27 +28,25 @@ export const useTableData = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Simulate an API call with setTimeout
     const fetchData = () => {
-      setTimeout(() => {
-        try {
-          // Replace with actual fetch request to your endpoint
-          setData(generateRandomLoanData());
-          setLoading(false);
-        } catch (error) {
-          setError(error);
-          setLoading(false);
-        }
-      }, 1000); // Simulating 1 second delay
+      try {
+
+        setData(generateRandomLoanData());
+        setLoading(false);
+        setError(null);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
     };
 
     fetchData();
+    const interval = setInterval(() => {
+      fetchData();
+    }, 30000); 
 
-    // Clean up function (optional)
-    return () => {
-      // Any clean-up code goes here
-    };
-  }, []); // Empty dependency array means this effect runs only once
+    return () => clearInterval(interval);
+  }, []);
 
   return { data, loading, error };
 };
