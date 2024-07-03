@@ -3,6 +3,11 @@
   --darker-primary-color: #00BDD66B;
   --button-text-color: #f0f0f0;
 
+	--completed-color: #BDD600;
+	--rejected-color: #DD600B;
+	--approved-color: #600bdd;
+	--pending-color: #00bdd6;
+
 	--dark-color: #333;
   --light-gray: #D3D3D3;
 	--light-color: #f0f0f0;

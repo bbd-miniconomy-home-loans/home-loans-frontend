@@ -50,56 +50,56 @@ export const Dashboard = () => {
               />
               <LoanTableRow
                 name={'123j4'}
-                status={'123123123'}
+                status={'approved'}
                 installmentAmountCents={123123.12312}
                 primeInterestRate={12.5}
                 interestRate={13.44}
               />
               <LoanTableRow
                 name={'12a34'}
-                status={'123123123'}
+                status={'completed'}
                 installmentAmountCents={123123.12312}
                 primeInterestRate={12.5}
                 interestRate={13.44}
               />
               <LoanTableRow
                 name={'12b34'}
-                status={'123123123'}
+                status={'rejected'}
                 installmentAmountCents={123123.12312}
                 primeInterestRate={12.5}
                 interestRate={13.44}
               />
               <LoanTableRow
                 name={'12a34'}
-                status={'123123123'}
+                status={'other'}
                 installmentAmountCents={123123.12312}
                 primeInterestRate={12.5}
                 interestRate={13.44}
               />
               <LoanTableRow
                 name={'123v4'}
-                status={'123123123'}
+                status={'pending'}
                 installmentAmountCents={123123.12312}
                 primeInterestRate={12.5}
                 interestRate={13.44}
               />
               <LoanTableRow
                 name={'12634'}
-                status={'123123123'}
+                status={'pending'}
                 installmentAmountCents={123123.12312}
                 primeInterestRate={12.5}
                 interestRate={13.44}
               />
               <LoanTableRow
                 name={'12234'}
-                status={'123123123'}
+                status={'rejected'}
                 installmentAmountCents={123123.12312}
                 primeInterestRate={12.5}
                 interestRate={13.44}
               />
               <LoanTableRow
                 name={'12334'}
-                status={'123123123'}
+                status={'approved'}
                 installmentAmountCents={123123.12312}
                 primeInterestRate={12.5}
                 interestRate={13.44}
