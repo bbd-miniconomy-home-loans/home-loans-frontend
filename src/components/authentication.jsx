@@ -1,5 +1,6 @@
 import React from 'react';
 import { cognitoConfig } from '../common/cognitoConfig';
+import { Button } from '@mui/material';
 
 const getLoginUrl = () => {
   return `https://${cognitoConfig.domain}/login?response_type=code&client_id=${cognitoConfig.clientId}&scope=${cognitoConfig.scope}&redirect_uri=${encodeURIComponent(cognitoConfig.redirectUri)}`;
@@ -11,9 +12,15 @@ const getLogoutUrl = () => {
 };
 
 export const LoginLink = () => (
-  <a href={getLoginUrl()}><button>Login</button></a>
+  <Button sx={{
+      background: "#00BDD6",
+      color: 'white'
+  }} 
+  href={getLoginUrl()}>
+    Login
+  </Button>
 );
 
 export const LogoutLink = () => (
-  <a href={getLogoutUrl()}><button>Logout</button></a>
+  <Button href={getLogoutUrl()}>Logout</Button>
 );
