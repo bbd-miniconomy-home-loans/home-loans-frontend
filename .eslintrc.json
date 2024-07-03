@@ -64,6 +64,7 @@
         "named": "never",
         "asyncArrow": "always"
       }
-    ]
+    ],    
+    "react/prop-types": "off"
   }
 }

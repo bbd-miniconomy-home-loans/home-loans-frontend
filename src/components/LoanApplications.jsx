@@ -22,11 +22,13 @@ export const LoanApplications = () => {
       borderRadius: 2,
       padding: 2,
       border: `0.1rem solid ${Variables.lightGrey}`,
+      minWidth: "250%",
+      display: "flex"
     }}>
       <Chart
         data={data}
       >
-        <Typography variant='h4' sx={{ px: 1, py: 2, pb: 5 }}>Loan Applications</Typography>
+        <Typography variant='h4' sx={{ px: 1, py: 2, pb: 5 }}>Loan </Typography>
         < PieSeries valueField="value"
           argumentField="argument"
           innerRadius={0.55}

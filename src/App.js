@@ -1,23 +1,22 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-
-import { NavigationBar, Dashboard, Bank, Loans, Unauthenticated } from './pages';
+import { NavigationBar, Dashboard, Bank, Loans } from './pages';
+import { ProtectedRoute } from './components/ProtectedRoute'
 
 function App() {
   return (
+
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<NavigationBar />}>
-          <Route index element={<Dashboard />} />
-          <Route path='/bank' element={<Bank />} />
-          <Route path='/loans' element={<Loans />} />
-          <Route path='/login' element={<Unauthenticated />} />
-
+        <Route path='/' element={<ProtectedRoute><NavigationBar /></ProtectedRoute>}>
+          <Route index element={<ProtectedRoute><Dashboard/></ProtectedRoute>} />
+          <Route path='/bank' element={<ProtectedRoute><Bank /></ProtectedRoute>} />
+          <Route path='/loans' element={<ProtectedRoute><Loans /></ProtectedRoute>} />
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
-
+ 
 export default App;

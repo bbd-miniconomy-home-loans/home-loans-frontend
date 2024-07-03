@@ -1,7 +1,6 @@
 import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
 import { BorderedBox, FinancialServices, LoanApplications, LoanTableRow } from '../components';
-import { FinancialServices, LoanApplications } from '../components';
 import { Variables } from '../common/variables';
 
 export const Dashboard = () => {
