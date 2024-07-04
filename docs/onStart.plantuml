@@ -1,0 +1,10 @@
+@startuml OnStart
+BE -> StockExchange: Sell49OfShares
+StockExchange -->> BE: Success
+BE -> CRS: Register
+CRS -->> BE: Success
+BE -> CommercialBank: getAccountBalance
+CommercialBank -->> BE: AccountBalance
+BE -> DB: StoreTaxID
+BE -> DB: StoreAccountBalance
+@enduml

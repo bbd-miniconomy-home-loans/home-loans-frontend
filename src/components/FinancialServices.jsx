@@ -10,8 +10,12 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 import { BoxStyle, ContainerStyle } from './styles';
 import { Variables } from '../common/variables';
 import { BorderedBox } from './BorderedBox';
+import { useAccountBalance } from '../hooks/useAccountBalance';
 
 export const FinancialServices = () => {
+
+  const {data, loading, error} = useAccountBalance();
+
   return (
     <BorderedBox>
       <Typography variant='h4' sx={{ px: 1, py: 2, pb: 5 }}>Financial Services</Typography>
@@ -31,8 +35,8 @@ export const FinancialServices = () => {
                 <Grid item xs={6}>
                   <FinancialServicesBlock
                     Icon={BalanceIcon}
-                    text='Balances'
-                    value={12341}
+                    text={'Balances'}
+                    value={data}
                   />
                 </Grid>
 

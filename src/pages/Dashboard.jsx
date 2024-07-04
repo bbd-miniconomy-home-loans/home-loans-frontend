@@ -20,41 +20,47 @@ export const Dashboard = () => {
         <Typography variant='h3' sx={{ p: 5 }}>Dashboard</Typography>
       </Container>
 
-      <FinancialServices />
-      <LoanDataProvider>
-        <Box sx={{ display: 'flex', flexDirection: 'row', width: '80vw', gap: 1 }}>
+      <BorderedBox>
+        <LoanDataProvider>
+
+          <Box sx={{ height: '60vh', overflowY: 'auto', // Add vertical scroll
+            '&::-webkit-scrollbar': {
+              width: '0.5em',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            }, 
+          }}>
+            <LoanTableRow
+              name={'Name'}
+              status={'Status'}
+              installmentAmountCents={'Installment Amount'}
+              primeInterestRate={''}
+              interestRate={'Interest Rate'}
+              asHeader={true}
+            />
+            <LoanTableRows/>
+          </Box>
+
+          {/* <Box sx={{ display: 'flex', flexDirection: 'row', width: '80vw', gap: 2 }}>
           <Box sx={{ flex: '1', minWidth: '0' }}>
             <LoanApplications />
           </Box>
-          <Box sx={{ flex: '2', minWidth: '0', display: 'flex', flexDirection: 'column', gap: 1 }}>
+          <Box sx={{ flex: '2', minWidth: '0', display: 'flex', flexDirection: 'column', gap: 0 }}>
+            
             <BorderedBox>
-              <Box sx={{ height: '40vh', backgroundColor: 'lightblue' }}>
-                {/* Content for first child with height 40vh */}
-              </Box>
+              
             </BorderedBox>
             <BorderedBox>
-              <Box sx={{ height: '60vh', overflowY: 'auto', // Add vertical scroll
-                '&::-webkit-scrollbar': {
-                  width: '0.5em',
-                },
-                '&::-webkit-scrollbar-thumb': {
-                  backgroundColor: 'rgba(0, 0, 0, 0.2)',
-                }, 
-              }}>
-                <LoanTableRow
-                  name={'Name'}
-                  status={'Status'}
-                  installmentAmountCents={'Installment Amount'}
-                  primeInterestRate={''}
-                  interestRate={'Interest Rate'}
-                  asHeader={true}
-                />
-                <LoanTableRows/>
+              <Box sx={{ height: '40vh', backgroundColor: 'lightblue' }}>
               </Box>
             </BorderedBox>
           </Box>
-        </Box>
-      </LoanDataProvider>
+        </Box> */}
+        </LoanDataProvider>
+      </BorderedBox>
+
+      <FinancialServices />
 
     </Container>
   );

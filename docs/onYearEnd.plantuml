@@ -1,0 +1,13 @@
+@startuml OnStart
+BE -> DB: getPrevYearAccountBalance
+BD -->> BE: PrevAccountBalance
+BE -> CommercialBank: getCurrentBalance
+CommercialBank -->> BE: CurrentBalance
+BE -> BE: CurrentBalance-PrevAccountBalance
+alt difference > 0
+    BE -> CRS: GetTaxableIncomeOnAmount
+    CRS -->> BE: Amount
+    BE -> CRS: PayTax
+    CRS -->> BE: Success
+end
+@enduml

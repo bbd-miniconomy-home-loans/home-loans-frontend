@@ -21,6 +21,10 @@ export const Pages = [
   },
 ];
 
+export const urls = {
+  homeLoans : 'https://api.bonds.projects.bbdgrad.com',
+  commercialBank: 'http://api.commercialbank.projects.bbdgrad.com',
+};
 
 Object.freeze(Symbols);
 Object.freeze(Pages);

@@ -1,0 +1,26 @@
+@startuml OnStart
+RE -> BE: LoanApplication
+BE -->> BE: Complex Algorithm
+alt declined
+    BE -->> RE: Declined
+end
+
+BE -> CommercialBank: GetAccountBalance
+CommercialBank -> BE: Balance
+BE -> BE: AssessFinancing
+
+alt AccBal > 5% of loan
+    BE -> CommercialBank: PayLoaner
+    CommercialBank -> RetailBank: TransferFunds
+    BE -> RetailBank: SetUpRepayDebitOrder
+    BE -->> RE: Success
+end
+
+alt !AccBal > 5% of loan
+    BE -> CommercialBank: LoanAmount
+    BE -> CommercialBank: PayLoaner
+    CommercialBank -> RetailBank: TransferFunds
+    BE -> RetailBank: SetUpRepayDebitOrder
+    BE -> RE: Success
+end
+@enduml

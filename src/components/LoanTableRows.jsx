@@ -21,20 +21,22 @@ export const LoanTableRows = () => {
 
   const rows = [];
   
-  for (let i = 0; i < data.length; i++) {
-    const value = data[i];
-    rows.push(<LoanTableRow
-      key={i}
-      name={value.name}
-      status={value.status}
-      installmentAmountCents={value.installment_cents}
-      primeInterestRate={12}
-      interestRate={value.interest_rate}
-      asHeader={false}
-    />);
-  }
+  if (data) {
+    for (let i = 0; i < data.length; i++) {
+      const value = data[i];
+      rows.push(<LoanTableRow
+        key={i}
+        name={value.name}
+        status={value.status}
+        installmentAmountCents={value.installment_cents}
+        primeInterestRate={12}
+        interestRate={value.interest_rate}
+        asHeader={false}
+      />);
+    }
   
-  return (
-    rows
-  );
+    return (
+      rows
+    );
+  }
 };
