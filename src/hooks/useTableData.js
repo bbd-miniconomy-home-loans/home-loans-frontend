@@ -48,7 +48,7 @@ export const useTableData = () => {
     const fetchData = () => {
       try {
 
-        setData(generateRandomLoanData());
+        setData(getTableData());
         setLoading(false);
         setError(null);
       } catch (error) {
